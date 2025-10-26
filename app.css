@@ -1,0 +1,214 @@
+/* ========================================================================
+   ERIC MEYER'S CSS RESET (v2.0)
+   Source: http://meyerweb.com/eric/tools/css/reset/
+   Purpose:
+   - Removes all browser-specific default styles (margins, paddings, fonts, etc.)
+   - Ensures consistent rendering across browsers
+   - Sets a clean baseline for your own custom styling
+   License: Public Domain
+========================================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;              /* Removes browser default outer spacing */
+    padding: 0;             /* Removes browser default inner spacing */
+    border: 0;              /* Removes any borders browsers apply by default */
+    font-size: 100%;        /* Resets font size to base value (usually 16px) */
+    font: inherit;          /* Ensures font styles inherit from parent */
+    vertical-align: baseline; /* Makes inline elements align consistently */
+}
+
+/* Make sure HTML5 elements display correctly in old browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;         /* Defines them as block-level elements */
+}
+
+body {
+    line-height: 1;         /* Normalizes line spacing */
+}
+
+ol, ul {
+    list-style: none;       /* Removes bullet points and numbers */
+}
+
+blockquote, q {
+    quotes: none;           /* Prevents automatic quote marks in these tags */
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';            /* Clears pseudo-content used for quotes */
+    content: none;
+}
+
+table {
+    border-collapse: collapse; /* Combines borders between cells */
+    border-spacing: 0;         /* Removes gaps between table cells */
+}
+
+/* ========================================================================
+   GLOBAL BASE STYLES
+========================================================================== */
+html {
+    box-sizing: border-box;  /* Includes padding + border in total width/height */
+    font-family: 'Open Sans', sans-serif; /* Global font (imported from Google Fonts) */
+}
+
+body {
+    background-color: #60a9ff;  /* Soft blue background for the page */
+    display: flex;              /* Enables flexbox layout to center content */
+    justify-content: center;    /* Horizontally centers the panel */
+    align-items: center;        /* Vertically centers the panel */
+    min-height: 100vh;          /* Ensures the body takes full viewport height */
+}
+
+/* ========================================================================
+   MAIN CONTAINER (.panel)
+   - Holds all the pricing plans side by side (or stacked on smaller screens)
+========================================================================== */
+.panel {
+    background-color: white;    /* White background to contrast blue body */
+    border-radius: 10px;        /* Smooth, rounded card edges */
+    padding: 15px 25px;         /* Space inside the container */
+    width: 100%;                /* Takes full width of viewport */
+    max-width: 960px;           /* Limits maximum width for readability */
+    display: flex;              /* Flex container for pricing plans */
+    flex-direction: column;     /* Stack plans vertically by default (mobile) */
+    text-align: center;         /* Centers all text inside */
+    text-transform: uppercase;  /* Converts text to uppercase for style uniformity */
+}
+
+/* ========================================================================
+   PRICING PLAN BOX (.pricing-plan)
+   - Each plan (Personal / Small Team / Enterprise) is one of these
+========================================================================== */
+.pricing-plan {
+    border-bottom: 1px solid #e1f1ff; /* Light divider between plans */
+}
+
+/* Remove bottom border from the last plan (so it looks neat) */
+.pricing-plan:last-child {
+    border-bottom: none;
+}
+
+/* ========================================================================
+   PLAN IMAGE (.pricing-img)
+   - The icon or image representing each plan
+========================================================================== */
+.pricing-img {
+    margin-bottom: 25px;  /* Space between image and plan title */
+    max-width: 100%;      /* Ensures image never overflows its container */
+}
+
+/* ========================================================================
+   PLAN TITLE (.pricing-header)
+   - The name of the plan (e.g. Personal, Team, Enterprise)
+========================================================================== */
+.pricing-header {
+    color: #888;          /* Medium gray for a soft, non-dominant look */
+    font-weight: 600;     /* Semi-bold for emphasis */
+    letter-spacing: 1px;  /* Adds breathing space between letters */
+}
+
+/* ========================================================================
+   FEATURE LIST (.pricing-features)
+   - Contains each plan’s features as list items
+========================================================================== */
+.pricing-features {
+    margin: 50px 0 25px;  /* Adds vertical spacing around the list */
+    color: #016ff9;       /* Bright blue to align with theme */
+}
+
+/* Individual feature item styling */
+.pricing-features-item {
+    font-weight: 600;              /* Emphasizes feature text */
+    letter-spacing: 1px;           /* Consistent spacing with header */
+    font-size: 12px;               /* Small and clean text */
+    line-height: 1.5;              /* Comfortable readability */
+    padding: 15px 0;               /* Vertical spacing for each feature */
+    border-top: 1px solid #e1f1ff; /* Top separator line between items */
+}
+
+/* Add a bottom border only to the last feature item */
+.pricing-features-item:last-child {
+    border-bottom: 1px solid #e1f1ff;
+}
+
+/* ========================================================================
+   PRICE LABEL (.pricing-price)
+   - Displays the actual price (e.g., $150, Free, $400)
+========================================================================== */
+.pricing-price {
+    color: #016ff9;        /* Same bright blue as feature text */
+    display: block;        /* Forces price onto its own line */
+    font-size: 32px;       /* Large, eye-catching text */
+    font-weight: 700;      /* Bold and prominent */
+}
+
+/* ========================================================================
+   BUTTON (.pricing-button)
+   - The “Sign Up” or “Free Trial” action buttons
+========================================================================== */
+.pricing-button {
+    border: 1px solid #9dd1ff;     /* Light blue border around button */
+    border-radius: 10px;           /* Rounded button corners */
+    color: #348efe;                /* Blue text color */
+    display: inline-block;         /* Allows padding and width control */
+    padding: 15px 35px;            /* Internal spacing for a balanced button shape */
+    text-decoration: none;         /* Removes underline from <a> links */
+    margin: 25px 0;                /* Adds spacing above and below button */
+    transition: background-color 200ms ease-in-out; /* Smooth hover transition */
+}
+
+/* Hover and focus effects for normal buttons */
+.pricing-button:hover,
+.pricing-button:focus {
+    background-color: #e1f1ff; /* Light blue background when hovered */
+}
+
+/* ========================================================================
+   FEATURED BUTTON (.pricing-button.is-featured)
+   - Used to highlight a special plan (usually the middle one)
+========================================================================== */
+.pricing-button.is-featured {
+    background-color: #48aaff; /* Solid blue background to make it stand out */
+    color: white;              /* White text for contrast */
+}
+
+/* Hover/focus effects for the featured button */
+.pricing-button.is-featured:hover,
+.pricing-button.is-featured:focus {
+    background-color: #269aff; /* Slightly darker blue on hover for feedback */
+    color: white;              /* Keeps text white */
+}
+
+/* ========================================================================
+   RESPONSIVE DESIGN
+   - Changes layout when the screen width is >= 900px
+========================================================================== */
+@media (min-width: 900px) {
+    .panel {
+        flex-direction: row;  /* Lays out the pricing plans side-by-side horizontally */
+    }
+
+    .pricing-plan {
+        border-bottom: none;        /* Removes vertical separators */
+        border-right: 1px solid #e1f1ff; /* Adds horizontal separators instead */
+        padding: 25px 50px;         /* Adds more padding for a spacious desktop layout */
+    }
+
+    .pricing-plan:last-child {
+        border-right: none;         /* Removes right border from the last plan */
+    }
+}

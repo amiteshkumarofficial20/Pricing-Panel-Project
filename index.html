@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 
+  The <!DOCTYPE html> declaration defines this document as an HTML5 file.
+  The <html> element wraps all content on the page.
+  The 'lang="en"' attribute specifies that the language of this document is English.
+-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 
+      This meta tag specifies the character encoding used by the document.
+      UTF-8 supports almost all characters (letters, symbols, emojis, etc.).
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+      This meta tag makes the website responsive.
+      It sets the viewport (visible area) width equal to the device width
+      and ensures correct scaling on mobile devices.
+    -->
+
+    <title>Price Tiers</title>
+    <!-- 
+      The title that appears in the browser tab.
+    -->
+
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" />
+    <!-- 
+      This imports the "Open Sans" font from Google Fonts with weights 400 (normal), 600 (semi-bold), and 700 (bold).
+      This allows the CSS to use 'font-family: "Open Sans", sans-serif' for styling text.
+    -->
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="app.css" />
+    <!-- 
+      Links to an external stylesheet (app.css) where all the visual design styles (layout, colors, spacing, etc.) are defined.
+    -->
+  </head>
+
+  <body>
+    <!-- 
+      The <body> tag contains everything visible on the webpage.
+      Here we’ll structure a pricing table with 3 pricing plans.
+    -->
+
+    <div class="panel">
+      <!-- 
+          The outer container for all pricing plans.
+          The 'panel' class likely handles layout (e.g., flexbox or grid) and spacing between cards.
+        -->
+
+      <!-- ========== Pricing Plan #1 ========== -->
+      <div class="pricing-plan">
+        <!-- 
+              Each pricing plan is inside a div with class 'pricing-plan'.
+              This acts as a card that contains icon, title, features, price, and button.
+            -->
+
+        <img src="icons/icon1.png" alt="" class="pricing-img" />
+        <!-- 
+              Displays an icon for the pricing plan.
+              The 'src' attribute specifies the path to the image file.
+              'alt' provides alternative text for accessibility (empty here but ideally should describe the image).
+              'pricing-img' is likely styled in CSS for consistent size and placement.
+            -->
+
+        <h2 class="pricing-header">Personal</h2>
+        <!-- 
+              The name/title of this pricing plan.
+              'pricing-header' styles it (font size, color, etc.).
+            -->
+
+        <ul class="pricing-features">
+          <!-- 
+                  A list (<ul>) of plan features.
+                  'pricing-features' controls styling of the list (padding, bullets, alignment).
+                -->
+          <li class="pricing-features-item">Custom domains</li>
+          <li class="pricing-features-item">
+            Sleeps after 30 mins of inactivity
+          </li>
+          <!-- Each <li> represents one feature of the plan. -->
+        </ul>
+
+        <span class="pricing-price">Free</span>
+        <!-- 
+              The plan’s cost or price.
+              'span' used here for inline styling; CSS likely makes it bold or large.
+            -->
+
+        <a href="#/" class="pricing-button">Sign up</a>
+        <!-- 
+              A call-to-action button (styled via 'pricing-button').
+              The 'href="#/"' means it currently doesn’t link anywhere (placeholder).
+            -->
+      </div>
+
+      <!-- ========== Pricing Plan #2 ========== -->
+      <div class="pricing-plan">
+        <img src="icons/icon2.png" alt="" class="pricing-img" />
+        <h2 class="pricing-header">Small team</h2>
+
+        <ul class="pricing-features">
+          <li class="pricing-features-item">Never sleeps</li>
+          <li class="pricing-features-item">
+            Multiple workers for more powerful apps
+          </li>
+        </ul>
+
+        <span class="pricing-price">$150</span>
+        <a href="#/" class="pricing-button is-featured">Free trial</a>
+        <!-- 
+              The 'is-featured' class is an extra modifier class, likely giving this button special styling
+              (e.g., different color or emphasis) since this plan might be “recommended.”
+            -->
+      </div>
+
+      <!-- ========== Pricing Plan #3 ========== -->
+      <div class="pricing-plan">
+        <img src="icons/icon3.png" alt="" class="pricing-img" />
+        <h2 class="pricing-header">Enterprise</h2>
+
+        <ul class="pricing-features">
+          <li class="pricing-features-item">Dedicated</li>
+          <li class="pricing-features-item">Simple horizontal scalability</li>
+        </ul>
+
+        <span class="pricing-price">$400</span>
+        <a href="#/" class="pricing-button">Free trial</a>
+      </div>
+    </div>
+  </body>
+</html>
