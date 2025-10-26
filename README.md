@@ -28,9 +28,9 @@ PriceTable/
 ├─ index.html        # Main HTML file
 ├─ app.css           # Stylesheet for the pricing panel
 ├─ icons/            # Folder containing icons for each plan
-├─ screenshot.png    # Screenshot of the pricing panel (update filename if needed)
-```
+├─ screenshot.png    # Screenshot of the pricing panel
 
 ## License
 
 This project is open source and free to use.
+```
